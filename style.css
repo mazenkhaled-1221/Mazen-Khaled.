@@ -341,7 +341,7 @@ background:var(--primary);
 
 }
 
-.menu-icon{
+.menu-btn{
 
 display:none;
 
@@ -1472,40 +1472,29 @@ padding:25px;
 /* ================= MOBILE MENU ================= */
 
 
-@media(max-width:992px){
+@media (max-width:992px){
 
+    .menu-btn{
+        display:block;
+    }
 
     .navbar{
-
         position:absolute;
-
         top:85px;
-
         left:5%;
-
         width:90%;
-
-        flex-direction:column;
-
-        gap:20px;
-
-        padding:30px;
-
-        background:rgba(17,24,39,.95);
-
+        background:#111827;
         border-radius:20px;
-
+        padding:20px;
         display:none;
-
+        flex-direction:column;
+        gap:20px;
+        z-index:1000;
     }
-
 
     .navbar.active{
-
         display:flex;
-
     }
-
 
 }
 

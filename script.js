@@ -1,6 +1,6 @@
 // ================= MOBILE MENU =================
 
-const menuIcon = document.querySelector(".menu-icon");
+const menuIcon = document.querySelector(".menu-btn");
 const navbar = document.querySelector(".navbar");
 
 if(menuIcon){
