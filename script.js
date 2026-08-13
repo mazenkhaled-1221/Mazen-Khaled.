@@ -210,3 +210,52 @@ setTimeout(typeEffect, typing ? 100 : 50);
 }
 
 typeEffect();
+
+const title = document.querySelector(".hero-title");
+
+function splitLetters(element) {
+    const nodes = [...element.childNodes];
+
+    nodes.forEach(node => {
+
+        if (node.nodeType === Node.TEXT_NODE) {
+            const text = node.textContent;
+            const fragment = document.createDocumentFragment();
+
+            [...text].forEach(char => {
+                if (char === " ") {
+                    fragment.appendChild(document.createTextNode(" "));
+                } else {
+                    const span = document.createElement("span");
+                    span.className = "letter";
+                    span.textContent = char;
+                    fragment.appendChild(span);
+                }
+            });
+
+            node.replaceWith(fragment);
+
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+            splitLetters(node);
+        }
+    });
+}
+
+splitLetters(title);
+
+document.querySelectorAll(".hero-title .letter").forEach(letter => {
+
+    letter.addEventListener("mouseenter", () => {
+
+        letter.classList.remove("wave");
+
+        void letter.offsetWidth;
+
+        letter.classList.add("wave");
+
+        setTimeout(() => {
+            letter.classList.remove("wave");
+        }, 450);
+    });
+
+});

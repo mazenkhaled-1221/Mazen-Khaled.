@@ -219,26 +219,31 @@ align-items:center;
 
 /* ================= LOGO ================= */
 
-.logo{
+.logo {
+    font-size: 30px;
+    font-family: 'Sora', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
 
-font-size:30px;
-
-font-family:'Sora';
-
-font-weight:800;
-
-text-decoration:none;
-
-color:#fff;
-
-letter-spacing:.5px;
-
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.35s ease, text-shadow 0.35s ease;
 }
 
-.logo span{
+.logo span {
+    color: var(--primary);
+    display: inline-block;
+    transition: transform 0.35s ease;
+}
 
-color:var(--primary);
+.logo:hover {
+    transform: translateY(-5px) scale(1.05);
+    text-shadow: 0 0 12px rgba(0, 110, 255, 0.8);
+}
 
+.logo:hover span {
+    transform: translateX(6px);
 }
 
 /* ================= NAVBAR ================= */
@@ -297,6 +302,43 @@ width:100%;
 
 }
 
+.hero-title {
+    cursor: default;
+}
+
+.hero-title .letter {
+    display: inline-block;
+    transition: 
+        transform 0.2s ease,
+        text-shadow 0.2s ease;
+}
+
+.hero-title .letter:hover {
+    transform: translateY(-12px) scale(1.25) rotate(-3deg);
+    text-shadow: 0 0 20px rgba(0, 110, 255, 0.8);
+}
+
+.hero-title .letter.wave {
+    animation: letterWave 0.45s ease;
+}
+
+@keyframes letterWave {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    35% {
+        transform: translateY(-18px) rotate(-8deg);
+    }
+
+    70% {
+        transform: translateY(4px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
 /* ================= NAV ACTIONS ================= */
 
 .nav-actions{
